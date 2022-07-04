@@ -1,0 +1,78 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    min-height: 70vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(../storage/computer-science.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.bg-light-blue {
+    background-color: #bad0f1;
+}
+
+.footer p {
+    font-size: 12px;
+}
+
+.article {
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(../storage/graduation.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 30vh;
+}
+
+.testimonial {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.testimonial-col {
+    background-color: #edf2fa;
+    border-radius: 10px;
+    margin : 2px;
+}
+
+.testimonial-col img {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+
+.text-small {
+    font-size: 13px;
+}
+
+.footer {
+    margin-top: 40vh;
+    margin-bottom: 10vh;
+}
