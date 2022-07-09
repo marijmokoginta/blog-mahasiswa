@@ -9,7 +9,8 @@ class AboutController extends Controller
 {
     public function index(): Response {
         return response()->view('about', [
-            'title' => 'About'
+            'title' => 'About',
+            'active'=> 'about'
         ]);
     }
 }

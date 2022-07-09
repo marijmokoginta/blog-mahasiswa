@@ -10,7 +10,8 @@ class HomeController extends Controller
     public function index(): Response
     {
         return response()->view('welcome', [
-            'title' => 'Home'
+            'title' => 'Home',
+            'active' => 'home'
         ]);
     }
 

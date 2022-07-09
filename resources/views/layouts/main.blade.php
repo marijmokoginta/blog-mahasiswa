@@ -10,6 +10,7 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
+
 <section class="header">
     @include('partials.navbar')
     @yield('text-box')
@@ -33,7 +34,6 @@
     </div>
 </section>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

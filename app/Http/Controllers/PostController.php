@@ -4,53 +4,37 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class PostController extends Controller
 {
-    public function index(Post $post = null): Response
+    public function index(): Response
     {
-        if ($post == null) {
-            $post = Post::all()->sortDesc();
+        $title = '';
+        if (request('category')) {
+            $category = Category::query()->where('slug', request('category'))->first();
+            $title = " in $category->name";
+        } else if (request('author')) {
+            $author = User::query()->where('name', request('author'))->first();
+            $title = " by $author->name";
         }
         return response()->view('posts', [
-            'title' => 'Posts',
-            'posts' => $post,
-            'categories' => Category::all()
+            'title' => "All Post $title",
+            'active' => 'blog',
+            'posts' => Post::latest()->filters(request(['search', 'category', 'author']))->paginate(7)
         ]);
-    }
-
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
     }
 
     public function show(Post $post): Response
     {
+        $post->views = $post->views + 1;
+        $post->save();
         return response()->view('post', [
             'title' => 'Preview',
+            'active' => 'blog',
             'post' => $post
         ]);
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }
