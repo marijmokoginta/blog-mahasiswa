@@ -29,6 +29,14 @@
                         </div>
                     @enderror
                     <div class="input-group mb-3">
+                        <input type="text" class="form-control form-floating @error('username') is-invalid @enderror" placeholder="username" name="username" required value="{{ old('username') }}">
+                    </div>
+                    @error('username')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    <div class="input-group mb-3">
                         <input type="email" class="form-control form-floating @error('email') is-invalid @enderror" placeholder="email" name="email" required value="{{ old('email') }}">
                     </div>
                     @error('email')

@@ -20,7 +20,7 @@ class UserController extends Controller
     public function auth(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
-            'email' => 'required|email:dns',
+            'email' => 'required|email',
             'password' => 'required'
         ]);
 
@@ -35,6 +35,7 @@ class UserController extends Controller
     public function store(Request $request) {
         $validatedData = $request->validate([
             'name' => 'required|min:5|max:255',
+            'username' => 'required|min:3|max:255',
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:8|max:255'
         ]);

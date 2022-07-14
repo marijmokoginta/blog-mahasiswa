@@ -38,6 +38,7 @@
                         <input type="email" class="form-control form-floating bg-transparent text-light @error('email') is-invalid @enderror" placeholder="email" name="email" autofocus value="{{ old('email') }}" required>
                     </div>
                     @error('email')
+                        {{ dd($errors) }}
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

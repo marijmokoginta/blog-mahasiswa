@@ -47,5 +47,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard.index');
     });
-    Route::resource('/dashboard/posts', DashboardPostController::class);
+    Route::resource('/dashboard/blogs', DashboardPostController::class);
 });

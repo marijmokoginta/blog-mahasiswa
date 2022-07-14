@@ -29,6 +29,9 @@
                     <div class="input-group mb-3">
                         <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="email@exampel.com" name="email" required>
                     </div>
+                    @error('email')
+                        <small>{{ $message }}</small>    
+                    @enderror
                     <div class="input-group mb-3">
                         <input type="text" class="form-control @error('message') is-invalid @enderror" placeholder="comment..." name="message" required>
                     </div>
